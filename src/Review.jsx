@@ -5,16 +5,36 @@ import { FaChevronLeft, FaChevronRight, FaQuoteRight } from 'react-icons/fa';
 const Review = () => {
   const [index, setIndex] = useState(3)
   const {name, job, image, text} = people[index]
+function prevPerson(params) {
+  
+}
+function nextPerson(params) {
+  
+}
+
+
   return (
     <article className="review">
       <div className="img-container">
-        <img src={image} alt={name} className='person-img' />
+        <img src={image} alt={name} className="person-img" />
         <span className="quote-icon">
-        <FaQuoteRight />
+          <FaQuoteRight />
         </span>
       </div>
+      <h4 className="author">{name}</h4>
+      <p className="job">{job}</p>
+      <p className="info">{text}</p>
+      <div className="button-container">
+        <button className="prev-btn" onClick={prevPerson}>
+          <FaChevronLeft />
+        </button>
+        <button className="next-btn" onClick={nextPerson}>
+          <FaChevronRight />
+        </button>
+      </div>
+      <button className="random-btn">suprise me</button>
     </article>
-  )
+  );
 };
 
 export default Review;
