@@ -3,13 +3,19 @@ import people from './data';
 import { FaChevronLeft, FaChevronRight, FaQuoteRight } from 'react-icons/fa';
 
 const Review = () => {
-  const [index, setIndex] = useState(3)
+  const [index, setIndex] = useState(0)
   const {name, job, image, text} = people[index]
-function prevPerson(params) {
-  
+function prevPerson() {
+   setIndex((prevIndex) => {
+     return prevIndex - 1;
+   
+   });
 }
-function nextPerson(params) {
+function nextPerson() {
+   setIndex((prevIndex) =>{
+   return prevIndex + 1;
   
+   })
 }
 
 
